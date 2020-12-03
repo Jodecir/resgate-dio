@@ -1,0 +1,77 @@
+@font-face {
+	font-family:Titulo;
+	src:url(../fonts/RockSalt-Regular.TTF);
+}
+
+h1 {
+	color:#603A03;
+	font-family:Titulo;
+	font-size:40px;
+}
+
+body {
+	background-image:url(../img/fundo.jpg);
+}
+
+#container{
+	width:950px;
+	height:auto;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#fundoGame {
+	border-color:#FFF;
+  border-style:solid;
+  background-image:url(../img/fundo_game.jpg);
+	height:615px;
+	width:950px;
+}
+
+#jogador {
+  background-image:url(../img/apache.png);
+	width:256px;
+	height:66px;
+	position:absolute;
+	left:8px;
+	top:179px;
+}
+
+#inimigo1 {
+	background-image:url(../img/inimigo1.png);
+	width: 256px;
+	height: 66px;
+	position: absolute;
+	left: 689px;
+	top: 253px;
+}
+
+#inimigo2 {
+	background-image: url(../img/inimigo2.png);
+	width: 165px;
+	height: 70px;
+	position: absolute;
+	left: 775px;
+	top: 447px;
+}
+
+#amigo {
+	background-image:url(../img/amigo.png);
+	width: 44px;
+	height: 51px;
+	position: absolute;
+	left: 10px;
+	top: 464px;
+}
+
+#inicio {
+	background-color:#FFF;
+	width:350px;
+	height:200px;
+ 	margin-left:auto;
+  margin-right:auto;
+ 	margin-top:100px;
+	text-align:center;
+	padding:10px;
+}
