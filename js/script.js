@@ -17,6 +17,7 @@ function loop() {
   movefundo();
   movejogador();
   moveinimigo1();
+  moveinimigo2();
 }
 
 function movefundo() {
@@ -72,5 +73,15 @@ function moveinimigo1() {
   posicaoY = parseInt(Math.random() * 335);
   $("#inimigo1").css("left",700);
   $("#inimigo1").css("top",posicaoY);			
+  }
+}
+
+function moveinimigo2() {
+  posicaoX = parseInt($("#inimigo2").css("left"));
+  $("#inimigo2").css("left",posicaoX-3);
+    
+  if (posicaoX<=0) {
+  $("#inimigo2").css("left",775);
+    
   }
 }
