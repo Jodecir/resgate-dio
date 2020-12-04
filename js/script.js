@@ -16,8 +16,9 @@ jogo.timer = setInterval(loop,15);
 function loop() {
   movefundo();
   movejogador();
+  moveamigo();
   moveinimigo1();
-  moveinimigo2();
+  moveinimigo2(); 
 }
 
 function movefundo() {
@@ -64,6 +65,15 @@ function movejogador() {
 	}
 }
 
+function moveamigo() {
+	posicaoX = parseInt($("#amigo").css("left"));
+	$("#amigo").css("left",posicaoX+1);
+				
+  if (posicaoX>906) {
+  $("#amigo").css("left",0);			
+  }
+}
+
 function moveinimigo1() {
 	posicaoX = parseInt($("#inimigo1").css("left"));
 	$("#inimigo1").css("left",posicaoX-velocidade);
@@ -82,6 +92,5 @@ function moveinimigo2() {
     
   if (posicaoX<=0) {
   $("#inimigo2").css("left",775);
-    
   }
 }
