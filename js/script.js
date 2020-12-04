@@ -61,6 +61,16 @@ var TECLA = {
   D: 68
 }
 
+var somDisparo=document.getElementById("somDisparo");
+var somExplosao=document.getElementById("somExplosao");
+var musica=document.getElementById("musica");
+var somGameover=document.getElementById("somGameover");
+var somPerdido=document.getElementById("somPerdido");
+var somResgate=document.getElementById("somResgate");
+
+musica.addEventListener("ended", function(){ musica.currentTime = 0; musica.play(); }, false);
+musica.play();
+
 jogo.pressionou = [];
 
 $(document).keydown(function(e){
@@ -119,6 +129,8 @@ function disparo() {
       $("#disparo").remove();
       podeAtirar=true;
     }
+    
+    somDisparo.play();
   }
 }
 
@@ -158,7 +170,7 @@ function colisao() {
   // Disparo com o inimigo1
   if (colisao3.length>0) {
     
-    velocidade=velocidade+0.3;
+    velocidade=velocidade+0.1;
     inimigo1X = parseInt($("#inimigo1").css("left"));
     inimigo1Y = parseInt($("#inimigo1").css("top"));
       
@@ -190,6 +202,7 @@ function colisao() {
     $("#amigo").remove();
     
     salvos++;
+    somResgate.play();
   }
 
   if (colisao6.length>0) {
@@ -218,6 +231,8 @@ function explosao1(inimigo1X,inimigo1Y) {
     window.clearInterval(tempoExplosao);
     tempoExplosao=null;
   }
+
+  somExplosao.play();
 }
 
 function explosao2(inimigo1X,inimigo1Y) {
@@ -235,6 +250,8 @@ function explosao2(inimigo1X,inimigo1Y) {
     window.clearInterval(tempoExplosao);
     tempoExplosao=null;
   }
+  
+  somExplosao.play();
 }
 
 function explosao3(amigoX,amigoY) {
@@ -247,6 +264,8 @@ function explosao3(amigoX,amigoY) {
   window.clearInterval(tempoExplosao3);
   tempoExplosao3=null;
   }
+  
+  somPerdido.play();
 }
 
 function reposicionaAmigo() {
