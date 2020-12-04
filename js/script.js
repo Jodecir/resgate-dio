@@ -8,12 +8,15 @@ function start() {
 }
 
 var jogo = {}
+var velocidade=5;
+var posicaoY = parseInt(Math.random() * 334);
 
 jogo.timer = setInterval(loop,15);
 
 function loop() {
   movefundo();
   movejogador();
+  moveinimigo1();
 }
 
 function movefundo() {
@@ -58,4 +61,16 @@ function movejogador() {
 	
 	if (jogo.pressionou[TECLA.D]) {
 	}
+}
+
+function moveinimigo1() {
+	posicaoX = parseInt($("#inimigo1").css("left"));
+	$("#inimigo1").css("left",posicaoX-velocidade);
+	$("#inimigo1").css("top",posicaoY);
+		
+  if (posicaoX<=0) {
+  posicaoY = parseInt(Math.random() * 335);
+  $("#inimigo1").css("left",700);
+  $("#inimigo1").css("top",posicaoY);			
+  }
 }
