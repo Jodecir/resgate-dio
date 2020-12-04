@@ -85,6 +85,13 @@ body {
     -o-animation: play .5s steps(2) infinite;
 }
 
+#disparo {
+	width: 50px;
+	height: 8px;
+	position: absolute;
+	background-image: url(../img/disparo.png);
+}
+
 @keyframes play {
 	from {background-position:0px;}
 	  to {background-position:-512px;}
