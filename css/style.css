@@ -215,3 +215,17 @@ to {background-position:-528px;}
    from { background-position:    0px; }
      to { background-position: -308px; }
 }
+
+#placar {
+	width: 450px;
+	height: 50px;
+	position: absolute;
+	left: 25px;
+	top: 550px;
+}
+
+h2 {
+	font-family:Titulo;
+	font-size:20px;
+	color:#FFF
+}
