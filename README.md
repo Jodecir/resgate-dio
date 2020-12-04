@@ -1,10 +1,10 @@
 # Descrição do Exercício
 
-#### Repositório da aula de JS ensinada na plataforma da Digital Innovation One, cujo desafio era criar um jogo Snake, o ultimo desafio do Bootcamp da DIO.
+#### Repositório da aula de JS ensinada na plataforma da Digital Innovation One, cujo desafio era criar um game para o Bootcamp
 
 ## Bootcamp
 
-* [HTML Web Developer](https://web.digitalinnovation.one/track/html-web-developer)
+* [HTML Web Developer](https://web.digitalinnovation.one/track/javascript-game-developer)
 
 ### Ferramentas Utilizadas:
 
