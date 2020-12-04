@@ -1,6 +1,7 @@
 function start() {
 	$("#inicio").hide();
 	
+  $("#fundoGame").append("<div id='armor'></div>");
   $("#fundoGame").append("<div class='anima1' id='jogador'></div>");
 	$("#fundoGame").append("<div class='anima3' id='amigo'></div>");
 	$("#fundoGame").append("<div class='anima2' id='inimigo1'></div>");
@@ -9,6 +10,7 @@ function start() {
 }
 
 var jogo = {}
+var armorAtual=3;
 var velocidade=5;
 var posicaoY = parseInt(Math.random() * 334);
 var podeAtirar=true;
@@ -20,6 +22,7 @@ var perdidos=0;
 jogo.timer = setInterval(loop,15);
 
 function loop() {
+  armor();
   movefundo();
   movejogador();
   moveamigo();
@@ -27,6 +30,24 @@ function loop() {
   moveinimigo2();
   colisao(); 
   placar();
+}
+
+function armor() {
+  if (armorAtual==3) {  
+    $("#armor").css("background-image", "url(img/armor3.png)");
+  }
+
+  if (armorAtual==2) {
+    $("#armor").css("background-image", "url(img/armor2.png)");
+  }
+
+  if (armorAtual==1) {
+    $("#armor").css("background-image", "url(img/armor1.png)");
+  }
+
+  if (armorAtual==0) {
+    $("#armor").css("background-image", "url(img/hud.png)");
+  }
 }
 
 function movefundo() {
@@ -118,6 +139,8 @@ function colisao() {
     posicaoY = parseInt(Math.random() * 334);
     $("#inimigo1").css("left",694);
     $("#inimigo1").css("top",posicaoY);
+
+    armorAtual--;
   }
 
   if (colisao2.length>0) {
@@ -128,10 +151,14 @@ function colisao() {
     $("#inimigo2").remove();
       
     reposicionaInimigo2();  
+
+    armorAtual--;
   }
 
   // Disparo com o inimigo1
   if (colisao3.length>0) {
+    
+    velocidade=velocidade+0.3;
     inimigo1X = parseInt($("#inimigo1").css("left"));
     inimigo1Y = parseInt($("#inimigo1").css("top"));
       
