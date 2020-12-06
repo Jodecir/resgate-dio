@@ -4,7 +4,7 @@
 
 ## Bootcamp
 
-* [HTML Web Developer](https://web.digitalinnovation.one/track/javascript-game-developer)
+* [JavaScript Game Developer](https://web.digitalinnovation.one/track/javascript-game-developer)
 
 ### Ferramentas Utilizadas:
 
