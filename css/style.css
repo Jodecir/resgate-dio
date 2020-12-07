@@ -3,14 +3,26 @@
 	src:url(../fonts/RockSalt-Regular.TTF);
 }
 
+body {
+	background-image:url(../img/fundo.jpg);
+}
+
 h1 {
 	color: #4b5320;
 	font-family:Titulo;
 	font-size:40px;
 }
 
-body {
-	background-image:url(../img/fundo.jpg);
+h2 {
+	font-family:Titulo;
+	font-size:20px;
+	color:#FFF
+}
+
+h3 {
+	font-family:Titulo;
+	font-size:20px;
+	color:#603A03;
 }
 
 #container{
@@ -230,18 +242,6 @@ to {background-position:-528px;}
 	position: absolute;
 	left: 25px;
 	top: 550px;
-}
-
-h2 {
-	font-family:Titulo;
-	font-size:20px;
-	color:#FFF
-}
-
-h3 {
-	font-family:Titulo;
-	font-size:20px;
-	color:#603A03;
 }
 
 #fim {
