@@ -25,7 +25,7 @@ h3 {
 	color:#603A03;
 }
 
-#container{
+#container-game{
 	width:950px;
 	height:auto;
 	position:relative;
@@ -33,7 +33,7 @@ h3 {
 	margin-right:auto;
 }
 
-#fundoGame {
+#background-game {
 	border-color:#FFF;
   border-style:solid;
   background-image:url(../img/fundo_game.jpg);
