@@ -51,9 +51,19 @@ function start() {
     }
   }
 
+  var bgMusic=document.getElementById("bgMusic");
+  var somDisparo=document.getElementById("somDisparo");
+  var somExplosao=document.getElementById("somExplosao");
+  var somGameover=document.getElementById("somGameover");
+  var somPerdido=document.getElementById("somPerdido");
+  var somResgate=document.getElementById("somResgate");
+
+  bgMusic.addEventListener("ended", function(){ bgMusic.currentTime = 0; bgMusic.play(); }, false);
+  bgMusic.play();
+  
   function gameOver() {
     armorZero=true;
-    musica.pause();
+    bgMusic.pause();
     somGameover.play();
     
     window.clearInterval(game.timer);
@@ -79,16 +89,6 @@ function start() {
     S: 83,
     D: 68
   }
-
-  var musica=document.getElementById("musica");
-  var somDisparo=document.getElementById("somDisparo");
-  var somExplosao=document.getElementById("somExplosao");
-  var somGameover=document.getElementById("somGameover");
-  var somPerdido=document.getElementById("somPerdido");
-  var somResgate=document.getElementById("somResgate");
-
-  musica.addEventListener("ended", function(){ musica.currentTime = 0; musica.play(); }, false);
-  musica.play();
 
   player.press = [];
 
