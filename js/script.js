@@ -1,12 +1,12 @@
 function start() {
-	$("#inicio").hide();
+	$("#start-game").hide();
 	
-  $("#fundoGame").append("<div id='armor'></div>");
-  $("#fundoGame").append("<div class='anima1' id='jogador'></div>");
-	$("#fundoGame").append("<div class='anima3' id='amigo'></div>");
-	$("#fundoGame").append("<div class='anima2' id='inimigo1'></div>");
-  $("#fundoGame").append("<div id='inimigo2'></div>");
-  $("#fundoGame").append("<div id='placar'></div>");
+  $("#background-game").append("<div id='armor'></div>");
+  $("#background-game").append("<div class='anima1' id='jogador'></div>");
+	$("#background-game").append("<div class='anima3' id='amigo'></div>");
+	$("#background-game").append("<div class='anima2' id='inimigo1'></div>");
+  $("#background-game").append("<div id='inimigo2'></div>");
+  $("#background-game").append("<div id='placar'></div>");
   
   var jogo = {}
   var armorAtual=3;
@@ -63,14 +63,14 @@ function start() {
     $("#inimigo2").remove();
     $("#amigo").remove();
     
-    $("#fundoGame").append("<div id='fim'></div>");
+    $("#background-game").append("<div id='fim'></div>");
     
     $("#fim").html("<h1> Game Over </h1>" + "<div id='reinicia' onClick=reiniciaJogo()><h3>Jogar Novamente</h3></div>");
   }
 
   function movefundo() {
-    esquerda = parseInt($("#fundoGame").css("background-position"));
-    $("#fundoGame").css("background-position",esquerda-1);
+    esquerda = parseInt($("#background-game").css("background-position"));
+    $("#background-game").css("background-position",esquerda-1);
   }
     
   var TECLA = {
@@ -131,7 +131,7 @@ function start() {
       posicaoX= parseInt($("#jogador").css("left"))
       tiroX = posicaoX + 190;
       topoTiro=topo+37;
-      $("#fundoGame").append("<div id='disparo'></div");
+      $("#background-game").append("<div id='disparo'></div");
       $("#disparo").css("top",topoTiro);
       $("#disparo").css("left",tiroX);
     
@@ -235,7 +235,7 @@ function start() {
   }
 
   function explosao1(inimigo1X,inimigo1Y) {
-    $("#fundoGame").append("<div id='explosao1'></div");
+    $("#background-game").append("<div id='explosao1'></div");
     $("#explosao1").css("background-image", "url(img/explosao.png)");
     var div=$("#explosao1");
     div.css("top", inimigo1Y);
@@ -254,7 +254,7 @@ function start() {
   }
 
   function explosao2(inimigo1X,inimigo1Y) {
-    $("#fundoGame").append("<div id='explosao1'></div");
+    $("#background-game").append("<div id='explosao1'></div");
     $("#explosao1").css("background-image", "url(img/explosao.png)");
     var div=$("#explosao1");
     div.css("top", inimigo2Y);
@@ -273,7 +273,7 @@ function start() {
   }
 
   function explosao3(amigoX,amigoY) {
-    $("#fundoGame").append("<div id='explosao3' class='anima4'></div");
+    $("#background-game").append("<div id='explosao3' class='anima4'></div");
     $("#explosao3").css("top",amigoY);
     $("#explosao3").css("left",amigoX);
     var tempoExplosao3=window.setInterval(resetaExplosao3, 1000);
@@ -294,7 +294,7 @@ function start() {
     tempoAmigo=null;
       
       if (fimdejogo==false) {
-      $("#fundoGame").append("<div id='amigo' class='anima3'></div>");		
+      $("#background-game").append("<div id='amigo' class='anima3'></div>");		
       }
     }
   }
@@ -308,7 +308,7 @@ function start() {
         
         if (fimdejogo==false) {
         
-        $("#fundoGame").append("<div id=inimigo2></div");	
+        $("#background-game").append("<div id=inimigo2></div");	
       }
     }	
   }
