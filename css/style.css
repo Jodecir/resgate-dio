@@ -16,7 +16,8 @@ h1 {
 h2 {
 	font-family:Titulo;
 	font-size:20px;
-	color:#FFF
+	color:#FFF;
+	margin: 0 20px 10px 10px;
 }
 
 h3 {
@@ -193,7 +194,6 @@ to {background-position:-528px;}
    to { background-position: -528px; }
 }
 
-
 #explosao3 {
 	width:44px;
 	height:51px;
@@ -237,6 +237,7 @@ to {background-position:-528px;}
 }
 
 #scoreboard {
+	margin-left: 250px;
 	width: 450px;
 	height: 50px;
 	position: absolute;

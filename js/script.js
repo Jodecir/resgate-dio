@@ -10,14 +10,14 @@ function start() {
   
   var game = {}
   var player = {}
-  var armorAtual=3;
+  var armor=3;
+  var armorZero=false;
   var speed=5;
   var yPosition = parseInt(Math.random() * 334);
-  var podeAtirar=true;
-  var lostedAllArmor=false;
-  var pontos=0;
-  var salvos=0;
-  var perdidos=0;
+  var shootUnlocked=true;
+  var points=0;
+  var peopleRescued=0;
+  var peopleDead=0;
 
   game.timer = setInterval(loop,15);
 
@@ -29,30 +29,30 @@ function start() {
     enemy1Movement();
     enemy2Movement();
     collision(); 
-    scoreboard();
+    scoreboardRefresh();
   }
 
   function armorRefresh() {
-    if (armorAtual==3) {  
+    if (armor==3) {  
       $("#armor").css("background-image", "url(img/armor3.png)");
     }
 
-    if (armorAtual==2) {
+    if (armor==2) {
       $("#armor").css("background-image", "url(img/armor2.png)");
     }
 
-    if (armorAtual==1) {
+    if (armor==1) {
       $("#armor").css("background-image", "url(img/armor1.png)");
     }
 
-    if (armorAtual==0) {
+    if (armor==0) {
       $("#armor").css("background-image", "url(img/hud.png)"); 
       gameOver();
     }
   }
 
   function gameOver() {
-    lostedAllArmor=true;
+    armorZero=true;
     musica.pause();
     somGameover.play();
     
@@ -125,8 +125,8 @@ function start() {
   }
 
   function disparo() {
-    if (podeAtirar==true) {	
-      podeAtirar=false;
+    if (shootUnlocked==true) {	
+      shootUnlocked=false;
       
       topo = parseInt($("#jogador").css("top"))
       xPosition= parseInt($("#jogador").css("left"))
@@ -146,7 +146,7 @@ function start() {
         window.clearInterval(tempoDisparo);
         tempoDisparo=null;
         $("#disparo").remove();
-        podeAtirar=true;
+        shootUnlocked=true;
       }
       
       somDisparo.play();
@@ -161,7 +161,6 @@ function start() {
     var colisao5 = ($("#jogador").collision($("#amigo")));
     var colisao6 = ($("#inimigo2").collision($("#amigo")));
       
-    // jogador com o inimigo1
     if (colisao1.length>0) {
       inimigo1X = parseInt($("#inimigo1").css("left"));
       inimigo1Y = parseInt($("#inimigo1").css("top"));
@@ -171,7 +170,7 @@ function start() {
       $("#inimigo1").css("left",694);
       $("#inimigo1").css("top",yPosition);
 
-      armorAtual--;
+      armor--;
     }
 
     if (colisao2.length>0) {
@@ -183,10 +182,9 @@ function start() {
         
       reposicionaInimigo2();  
 
-      armorAtual--;
+      armor--;
     }
 
-    // Disparo com o inimigo1
     if (colisao3.length>0) {
       
       speed=speed+0.1;
@@ -200,7 +198,7 @@ function start() {
       $("#inimigo1").css("left",694);
       $("#inimigo1").css("top",yPosition);
       
-      pontos=pontos+100;
+      points=points+100;
     }
 
     if (colisao4.length>0) {
@@ -213,14 +211,14 @@ function start() {
       
       reposicionaInimigo2();
       
-      pontos=pontos+50;
+      points=points+50;
     }
 
     if (colisao5.length>0) {		
       reposicionaAmigo();
       $("#amigo").remove();
       
-      salvos++;
+      peopleRescued++;
       somResgate.play();
     }
 
@@ -231,7 +229,7 @@ function start() {
       $("#amigo").remove();
           
       reposicionaAmigo();
-      perdidos++;
+      peopleDead++;
     }
   }
 
@@ -254,10 +252,10 @@ function start() {
     somExplosao.play();
   }
 
-  function explosao2(inimigo1X,inimigo1Y) {
-    $("#background-game").append("<div id='explosao1'></div");
-    $("#explosao1").css("background-image", "url(img/explosao.png)");
-    var div=$("#explosao1");
+  function explosao2(inimigo2X,inimigo2Y) {
+    $("#background-game").append("<div id='explosao2'></div");
+    $("#explosao2").css("background-image", "url(img/explosao.png)");
+    var div=$("#explosao2");
     div.css("top", inimigo2Y);
     div.css("left", inimigo2X);
     div.animate({width:200, opacity:0}, "slow");
@@ -294,7 +292,7 @@ function start() {
     window.clearInterval(tempoAmigo);
     tempoAmigo=null;
       
-      if (lostedAllArmor==false) {
+      if (armorZero==false) {
       $("#background-game").append("<div id='amigo' class='anima3'></div>");		
       }
     }
@@ -307,7 +305,7 @@ function start() {
         window.clearInterval(tempoColisao4);
         tempoColisao4=null;
         
-        if (lostedAllArmor==false) {
+        if (armorZero==false) {
         
         $("#background-game").append("<div id=inimigo2></div");	
       }
@@ -344,8 +342,8 @@ function start() {
     }
   }
 
-  function scoreboard() {	
-    $("#scoreboard").html("<h2> Pontos: " + pontos + " Salvos: " + salvos + " Perdidos: " + perdidos + "</h2>");
+  function scoreboardRefresh() {	
+    $("#scoreboard").html("<h2> Pontos: " + points + " Salvos: " + peopleRescued + " Perdidos: " + peopleDead + "</h2>");
   }
 }
 
