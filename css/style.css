@@ -59,8 +59,8 @@ h3 {
 	top:179px;
 }
 
-#inimigo1 {
-	background-image:url(../img/inimigo1.png);
+#enemy1 {
+	background-image:url(../img/enemy1.png);
 	width: 256px;
 	height: 66px;
 	position: absolute;
@@ -68,8 +68,8 @@ h3 {
 	top: 253px;
 }
 
-#inimigo2 {
-	background-image: url(../img/inimigo2.png);
+#enemy2 {
+	background-image: url(../img/enemy2.png);
 	width: 165px;
 	height: 70px;
 	position: absolute;
@@ -152,7 +152,7 @@ h3 {
 }
 
 .anima2 {
-  background-image:url(../img/inimigo1.png);
+  background-image:url(../img/enemy1.png);
   animation: play .5s steps(2) infinite;
   -webkit-animation: play .5s steps(2) infinite;
   -moz-animation: play .5s steps(2) infinite;

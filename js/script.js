@@ -4,8 +4,8 @@ function start() {
   $("#background-game").append("<div id='armor'></div>");
   $("#background-game").append("<div class='anima1' id='jogador'></div>");
 	$("#background-game").append("<div class='anima3' id='amigo'></div>");
-	$("#background-game").append("<div class='anima2' id='inimigo1'></div>");
-  $("#background-game").append("<div id='inimigo2'></div>");
+	$("#background-game").append("<div class='anima2' id='enemy1'></div>");
+  $("#background-game").append("<div id='enemy2'></div>");
   $("#background-game").append("<div id='scoreboard'></div>");
   
   var game = {}
@@ -70,8 +70,8 @@ function start() {
     game.timer=null;
     
     $("#jogador").remove();
-    $("#inimigo1").remove();
-    $("#inimigo2").remove();
+    $("#enemy1").remove();
+    $("#enemy2").remove();
     $("#amigo").remove();
     
     $("#background-game").append("<div id='fim'></div>");
@@ -154,31 +154,31 @@ function start() {
   }
 
   function collision() {
-    var colisao1 = ($("#jogador").collision($("#inimigo1")));
-    var colisao2 = ($("#jogador").collision($("#inimigo2")));
-    var colisao3 = ($("#disparo").collision($("#inimigo1")));
-    var colisao4 = ($("#disparo").collision($("#inimigo2")));
+    var colisao1 = ($("#jogador").collision($("#enemy1")));
+    var colisao2 = ($("#jogador").collision($("#enemy2")));
+    var colisao3 = ($("#disparo").collision($("#enemy1")));
+    var colisao4 = ($("#disparo").collision($("#enemy2")));
     var colisao5 = ($("#jogador").collision($("#amigo")));
-    var colisao6 = ($("#inimigo2").collision($("#amigo")));
+    var colisao6 = ($("#enemy2").collision($("#amigo")));
       
     if (colisao1.length>0) {
-      inimigo1X = parseInt($("#inimigo1").css("left"));
-      inimigo1Y = parseInt($("#inimigo1").css("top"));
-      explosao1(inimigo1X,inimigo1Y);
+      enemy1X = parseInt($("#enemy1").css("left"));
+      enemy1Y = parseInt($("#enemy1").css("top"));
+      explosao1(enemy1X,enemy1Y);
 
       yPosition = parseInt(Math.random() * 334);
-      $("#inimigo1").css("left",694);
-      $("#inimigo1").css("top",yPosition);
+      $("#enemy1").css("left",694);
+      $("#enemy1").css("top",yPosition);
 
       armor--;
     }
 
     if (colisao2.length>0) {
-      inimigo2X = parseInt($("#inimigo2").css("left"));
-      inimigo2Y = parseInt($("#inimigo2").css("top"));
-      explosao2(inimigo2X,inimigo2Y);
+      enemy2X = parseInt($("#enemy2").css("left"));
+      enemy2Y = parseInt($("#enemy2").css("top"));
+      explosao2(enemy2X,enemy2Y);
           
-      $("#inimigo2").remove();
+      $("#enemy2").remove();
         
       reposicionaInimigo2();  
 
@@ -188,25 +188,25 @@ function start() {
     if (colisao3.length>0) {
       
       speed=speed+0.1;
-      inimigo1X = parseInt($("#inimigo1").css("left"));
-      inimigo1Y = parseInt($("#inimigo1").css("top"));
+      enemy1X = parseInt($("#enemy1").css("left"));
+      enemy1Y = parseInt($("#enemy1").css("top"));
         
-      explosao1(inimigo1X,inimigo1Y);
+      explosao1(enemy1X,enemy1Y);
       $("#disparo").css("left",950);
         
       yPosition = parseInt(Math.random() * 334);
-      $("#inimigo1").css("left",694);
-      $("#inimigo1").css("top",yPosition);
+      $("#enemy1").css("left",694);
+      $("#enemy1").css("top",yPosition);
       
       points=points+100;
     }
 
     if (colisao4.length>0) {
-      inimigo2X = parseInt($("#inimigo2").css("left"));
-      inimigo2Y = parseInt($("#inimigo2").css("top"));
-      $("#inimigo2").remove();
+      enemy2X = parseInt($("#enemy2").css("left"));
+      enemy2Y = parseInt($("#enemy2").css("top"));
+      $("#enemy2").remove();
     
-      explosao2(inimigo2X,inimigo2Y);
+      explosao2(enemy2X,enemy2Y);
       $("#disparo").css("left",950);
       
       reposicionaInimigo2();
@@ -233,12 +233,12 @@ function start() {
     }
   }
 
-  function explosao1(inimigo1X,inimigo1Y) {
+  function explosao1(enemy1X,enemy1Y) {
     $("#background-game").append("<div id='explosao1'></div");
     $("#explosao1").css("background-image", "url(img/explosao.png)");
     var div=$("#explosao1");
-    div.css("top", inimigo1Y);
-    div.css("left", inimigo1X);
+    div.css("top", enemy1Y);
+    div.css("left", enemy1X);
     div.animate({width:200, opacity:0}, "slow");
     
     var tempoExplosao=window.setInterval(removeExplosao, 500);
@@ -252,12 +252,12 @@ function start() {
     somExplosao.play();
   }
 
-  function explosao2(inimigo2X,inimigo2Y) {
+  function explosao2(enemy2X,enemy2Y) {
     $("#background-game").append("<div id='explosao2'></div");
     $("#explosao2").css("background-image", "url(img/explosao.png)");
     var div=$("#explosao2");
-    div.css("top", inimigo2Y);
-    div.css("left", inimigo2X);
+    div.css("top", enemy2Y);
+    div.css("left", enemy2X);
     div.animate({width:200, opacity:0}, "slow");
     
     var tempoExplosao=window.setInterval(removeExplosao, 500);
@@ -307,7 +307,7 @@ function start() {
         
         if (armorZero==false) {
         
-        $("#background-game").append("<div id=inimigo2></div");	
+        $("#background-game").append("<div id=enemy2></div");	
       }
     }	
   }
@@ -322,23 +322,23 @@ function start() {
   }
 
   function enemy1Movement() {
-    xPosition = parseInt($("#inimigo1").css("left"));
-    $("#inimigo1").css("left",xPosition-speed);
-    $("#inimigo1").css("top",yPosition);
+    xPosition = parseInt($("#enemy1").css("left"));
+    $("#enemy1").css("left",xPosition-speed);
+    $("#enemy1").css("top",yPosition);
       
     if (xPosition<=0) {
     yPosition = parseInt(Math.random() * 335);
-    $("#inimigo1").css("left",700);
-    $("#inimigo1").css("top",yPosition);			
+    $("#enemy1").css("left",700);
+    $("#enemy1").css("top",yPosition);			
     }
   }
 
   function enemy2Movement() {
-    xPosition = parseInt($("#inimigo2").css("left"));
-    $("#inimigo2").css("left",xPosition-3);
+    xPosition = parseInt($("#enemy2").css("left"));
+    $("#enemy2").css("left",xPosition-3);
       
     if (xPosition<=0) {
-      $("#inimigo2").css("left",775);
+      $("#enemy2").css("left",775);
     }
   }
 
