@@ -37,7 +37,7 @@ h3 {
 	border-color:#FFF;
   border-style:solid;
   background-image:url(../img/fundo_game.jpg);
-	height:615px;
+	height:600px;
 	width:950px;
 }
 
@@ -236,7 +236,7 @@ to {background-position:-528px;}
      to { background-position: -308px; }
 }
 
-#placar {
+#scoreboard {
 	width: 450px;
 	height: 50px;
 	position: absolute;
