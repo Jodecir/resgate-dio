@@ -87,7 +87,10 @@ function start() {
   var KEY = {
     W: 87,
     S: 83,
-    D: 68
+    D: 68,  
+    ArrowUp: 38,
+    ArrowDown: 40,
+    SpaceBar: 32,
   }
 
   player.press = [];
@@ -101,7 +104,7 @@ function start() {
   });
 
   function playerMovement() {
-    if (player.press[KEY.W]) {
+    if (player.press[KEY.W] | player.press[KEY.ArrowUp]) {
       var topo = parseInt($("#jogador").css("top"));
       $("#jogador").css("top",topo-10);	
       
@@ -110,7 +113,7 @@ function start() {
       }
     }
     
-    if (player.press[KEY.S]) {
+    if (player.press[KEY.S] | player.press[KEY.ArrowDown]) {
       var topo = parseInt($("#jogador").css("top"));
       $("#jogador").css("top",topo+10);	
     }
@@ -119,7 +122,7 @@ function start() {
       $("#jogador").css("top",topo-10);
     }
     
-    if (player.press[KEY.D]) {
+    if (player.press[KEY.D] | player.press[KEY.SpaceBar]) {
       disparo();
     }
   }
