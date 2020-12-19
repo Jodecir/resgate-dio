@@ -31,59 +31,7 @@ function start() {
     collision(); 
     scoreboardRefresh();
   }
-
-  function armorRefresh() {
-    if (armor==3) {  
-      $("#armor").css("background-image", "url(img/armor3.png)");
-    }
-
-    if (armor==2) {
-      $("#armor").css("background-image", "url(img/armor2.png)");
-    }
-
-    if (armor==1) {
-      $("#armor").css("background-image", "url(img/armor1.png)");
-    }
-
-    if (armor==0) {
-      $("#armor").css("background-image", "url(img/hud.png)"); 
-      gameOver();
-    }
-  }
-
-  var bgMusic=document.getElementById("bgMusic");
-  var somDisparo=document.getElementById("somDisparo");
-  var somExplosao=document.getElementById("somExplosao");
-  var somGameover=document.getElementById("somGameover");
-  var somPerdido=document.getElementById("somPerdido");
-  var somResgate=document.getElementById("somResgate");
-
-  bgMusic.addEventListener("ended", function(){ bgMusic.currentTime = 0; bgMusic.play(); }, false);
-  bgMusic.play();
   
-  function gameOver() {
-    armorZero=true;
-    bgMusic.pause();
-    somGameover.play();
-    
-    window.clearInterval(game.timer);
-    game.timer=null;
-    
-    $("#jogador").remove();
-    $("#enemy1").remove();
-    $("#enemy2").remove();
-    $("#amigo").remove();
-    
-    $("#background-game").append("<div id='fim'></div>");
-    
-    $("#fim").html("<h1> Game Over </h1>" + "<div id='reinicia' onClick=reiniciagame()><h3>Jogar Novamente</h3></div>");
-  }
-
-  function bgMovement() {
-    esquerda = parseInt($("#background-game").css("background-position"));
-    $("#background-game").css("background-position",esquerda-1);
-  }
-    
   var KEY = {
     W: 87,
     S: 83,
@@ -125,6 +73,40 @@ function start() {
     if (player.press[KEY.D] | player.press[KEY.SpaceBar]) {
       disparo();
     }
+  }
+
+  function armorRefresh() {
+    if (armor==3) {  
+      $("#armor").css("background-image", "url(img/armor3.png)");
+    }
+
+    if (armor==2) {
+      $("#armor").css("background-image", "url(img/armor2.png)");
+    }
+
+    if (armor==1) {
+      $("#armor").css("background-image", "url(img/armor1.png)");
+    }
+
+    if (armor==0) {
+      $("#armor").css("background-image", "url(img/hud.png)"); 
+      gameOver();
+    }
+  }
+
+  var bgMusic=document.getElementById("bgMusic");
+  var somDisparo=document.getElementById("somDisparo");
+  var somExplosao=document.getElementById("somExplosao");
+  var somGameover=document.getElementById("somGameover");
+  var somPerdido=document.getElementById("somPerdido");
+  var somResgate=document.getElementById("somResgate");
+
+  bgMusic.addEventListener("ended", function(){ bgMusic.currentTime = 0; bgMusic.play(); }, false);
+  bgMusic.play();
+
+  function bgMovement() {
+    esquerda = parseInt($("#background-game").css("background-position"));
+    $("#background-game").css("background-position",esquerda-1);
   }
 
   function disparo() {
@@ -347,6 +329,24 @@ function start() {
 
   function scoreboardRefresh() {	
     $("#scoreboard").html("<h2> Pontos: " + points + " Salvos: " + peopleRescued + " Perdidos: " + peopleDead + "</h2>");
+  }
+  
+  function gameOver() {
+    armorZero=true;
+    bgMusic.pause();
+    somGameover.play();
+    
+    window.clearInterval(game.timer);
+    game.timer=null;
+    
+    $("#jogador").remove();
+    $("#enemy1").remove();
+    $("#enemy2").remove();
+    $("#amigo").remove();
+    
+    $("#background-game").append("<div id='fim'></div>");
+    
+    $("#fim").html("<h1> Game Over </h1>" + "<div id='reinicia' onClick=reiniciagame()><h3>Jogar Novamente</h3></div>");
   }
 }
 
