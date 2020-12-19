@@ -1,6 +1,6 @@
 # Descrição do Exercício
 
-Repositório da aula de JS ensinada na plataforma da Digital Innovation One, cujo desafio era criar um jogo semelhante a um Space-Shooter para o Bootcamp.
+Repositório da aula de JS ensinada na plataforma Digital Innovation One, cujo desafio era criar um jogo semelhante a um Space-Shooter de resgate.
 
 ## Bootcamp
 
