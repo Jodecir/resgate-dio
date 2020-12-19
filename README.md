@@ -1,6 +1,6 @@
 # Descrição do Exercício
 
-#### Repositório da aula de JS ensinada na plataforma da Digital Innovation One, cujo desafio era criar um game para o Bootcamp
+Repositório da aula de JS ensinada na plataforma da Digital Innovation One, cujo desafio era criar um jogo semelhante a um Space-Shooter para o Bootcamp.
 
 ## Bootcamp
 
@@ -24,5 +24,6 @@
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/jodecir/)](https://www.linkedin.com/in/jodecir/) 
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:jodecirneto@gmail.com)](mailto:jodecirneto@gmail.com)
 
-### Art Credits
-#### Armor(Life\HP) Icons: 7Soul1
+#### Creditos de Arte:
+
+Icones de Armor(Life\HP) feito por: <a href="https://www.deviantart.com/7soul1" title="7Soul1">7Soul1</a>
