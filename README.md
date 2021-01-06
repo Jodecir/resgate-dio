@@ -8,10 +8,10 @@ Repositório da aula de JS ensinada na plataforma Digital Innovation One, cujo d
 
 ### Ferramentas Utilizadas:
 
-![VS Code](http://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=ffffff)
-![Git](https://img.shields.io/badge/-Git-%23F05032?style=flat-square&logo=git&logoColor=ffffff)
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=github&logoColor=ffffff)
-![GIMP](https://img.shields.io/badge/-GIMP-ffffff?style=flat-square&logo=gimp&logoColor=181717)
+![VS Code](http://img.shields.io/badge/-VS%20Code-007ACC?style=flat&logo=visual-studio-code&logoColor=ffffff)
+![Git](https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=ffffff)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat&logo=github&logoColor=ffffff)
+![GIMP](https://img.shields.io/badge/-GIMP-ffffff?style=flat&logo=gimp&logoColor=181717)
 
 ### Requisitos:
 
