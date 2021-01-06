@@ -19,6 +19,12 @@ Repositório da aula de JS ensinada na plataforma Digital Innovation One, cujo d
 [![CSS Badge](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3&logoColor=ffffff&link=https://developer.mozilla.org/pt-BR/docs/Web/CSS)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [![JS Badge](https://img.shields.io/badge/-JavaScript-%23F7DF1E?style=flat-square&logo=javascript&logoColor=black&link=https://www.w3schools.com/js/default.asp)](https://www.w3schools.com/js/default.asp)
 
+### Recursos CSS:
+
+* [@font-face](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)
+* [:root](https://www.w3schools.com/cssref/sel_root.asp)
+* [@keyframes](https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp)
+
 #### Contatos:
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/jodecir/)](https://www.linkedin.com/in/jodecir/) 

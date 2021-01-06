@@ -1,6 +1,14 @@
 @font-face {
-	font-family:Titulo;
-	src:url(../fonts/RockSalt-Regular.TTF);
+	font-family: Titulo;
+	src: url(../fonts/RockSalt-Regular.TTF);
+}
+
+:root {
+  --branco: #fafafa;
+  --preto: #000000;
+  --cinza: #666666;
+  --verdeEscuro: #4b5320;
+  --laranjaEscuro: #4b5320;
 }
 
 body {
@@ -8,38 +16,38 @@ body {
 }
 
 h1 {
-	color: #4b5320;
-	font-family:Titulo;
-	font-size:40px;
+	color: var(--verdeEscuro);
+	font-family: Titulo;
+	font-size: 40px;
 }
 
 h2 {
-	font-family:Titulo;
-	font-size:20px;
-	color:#FFF;
+	font-family: Titulo;
+	font-size: 20px;
+	color: var(--branco);
 	margin: 0 10px 10px 10px;
 }
 
 h3 {
-	font-family:Titulo;
-	font-size:20px;
-	color:#603A03;
+	font-family: Titulo;
+	font-size: 20px;
+	color: var(--laranjaEscuro);
 }
 
 #container-game{
-	width:950px;
-	height:auto;
-	position:relative;
-	margin-left:auto;
-	margin-right:auto;
+	width: 950px;
+	height: auto;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #background-game {
-	border-color:#FFF;
-  border-style:solid;
-  background-image:url(../img/fundo_game.jpg);
-	height:600px;
-	width:950px;
+	border-color: var(--branco);
+  border-style: solid;
+  background-image: url(../img/fundo_game.jpg);
+	height: 600px;
+	width: 950px;
 }
 
 #armor {
@@ -51,16 +59,16 @@ h3 {
 }
 
 #jogador {
-  background-image:url(../img/apache.png);
-	width:256px;
-	height:66px;
-	position:absolute;
-	left:8px;
-	top:179px;
+  background-image: url(../img/apache.png);
+	width: 256px;
+	height: 66px;
+	position: absolute;
+	left: 8px;
+	top: 179px;
 }
 
 #enemy1 {
-	background-image:url(../img/enemy1.png);
+	background-image: url(../img/enemy1.png);
 	width: 256px;
 	height: 66px;
 	position: absolute;
@@ -78,7 +86,7 @@ h3 {
 }
 
 #amigo {
-	background-image:url(../img/amigo.png);
+	background-image: url(../img/amigo.png);
 	width: 44px;
 	height: 51px;
 	position: absolute;
@@ -87,18 +95,18 @@ h3 {
 }
 
 #start-game {
-	background-color:#FFF;
-	width:350px;
-	height:250px;
- 	margin-left:auto;
-  margin-right:auto;
- 	margin-top:100px;
-	text-align:center;
-	padding:10px;
+	background-color: var(--branco);
+	width: 350px;
+	height: 250px;
+ 	margin-left: auto;
+  margin-right: auto;
+ 	margin-top: 100px;
+	text-align: center;
+	padding: 10px;
 }
 
 .anima1 {
-	background-image:url(../img/helicoptero.png);
+	background-image: url(../img/helicoptero.png);
 	animation:play .5s steps(2) infinite;
     -webkit-animation: play .5s steps(2) infinite;
     -moz-animation: play .5s steps(2) infinite;
@@ -107,28 +115,28 @@ h3 {
 }
 
 @keyframes play {
-	from {background-position:0px;}
-	  to {background-position:-512px;}
+	from {background-position: 0px;}
+	  to {background-position: -512px;}
 }
 
 
 @-webkit-keyframes play {
-   from { background-position:0px; }
+   from { background-position: 0px; }
      to { background-position: -512px; }
 }
 
 @-moz-keyframes play {
-   from { background-position:0px; }
+   from { background-position: 0px; }
      to { background-position: -512px; }
 }
 
 @-ms-keyframes play {
-   from { background-position:0px; }
+   from { background-position: 0px; }
      to { background-position: -512px; }
 }
 
 @-o-keyframes play {
-   from { background-position:0px; }
+   from { background-position: 0px; }
      to { background-position: -512px; }
 }
 
@@ -140,19 +148,19 @@ h3 {
 }
 
 #explosao1 {
-	width:15px;
-	height:87px;
-	position:absolute;
+	width: 15px;
+	height: 87px;
+	position: absolute;
 }
 
 #explosao2 {
-	width:15px;
-	height:87px;
-	position:absolute;
+	width: 15px;
+	height: 87px;
+	position: absolute;
 }
 
 .anima2 {
-  background-image:url(../img/enemy1.png);
+  background-image: url(../img/enemy1.png);
   animation: play .5s steps(2) infinite;
   -webkit-animation: play .5s steps(2) infinite;
   -moz-animation: play .5s steps(2) infinite;
@@ -161,7 +169,7 @@ h3 {
 }
 
 .anima3 {
-	background-image:url(../img/amigo.png);
+	background-image: url(../img/amigo.png);
 	animation:play2 .9s steps(12) infinite;
 	-webkit-animation: play2 .9s steps(12) infinite;
 	-moz-animation: play2 .9s steps(12) infinite;
@@ -195,15 +203,15 @@ to {background-position:-528px;}
 }
 
 #explosao3 {
-	width:44px;
-	height:51px;
-	position:absolute;
+	width: 44px;
+	height: 51px;
+	position: absolute;
 }
 
 .anima4 {
 	width:44px;
 	height:51px;
-	background-image:url(../img/amigo_morte.png);
+	background-image: url(../img/amigo_morte.png);
 	animation:play3 .5s steps(7) infinite;
 	-webkit-animation: play3 .5s steps(7) infinite;
 	-moz-animation: play3 .5s steps(7) infinite;
@@ -212,8 +220,8 @@ to {background-position:-528px;}
 }
 
 @keyframes play3 {
-	from {background-position:0px;}
-	to {background-position:-308px;}
+	from { background-position: 	0px; }
+	to { background-position: -308px;  }
 }
 
 @-webkit-keyframes play3 {
@@ -246,12 +254,12 @@ to {background-position:-528px;}
 }
 
 #fim {
-	width:350px;
-	height:250px;
-	background-color:#FFF;
- 	margin-left:auto;
-  margin-right:auto;
- 	margin-top:100px;
-	text-align:center;
-	padding:10px;
+	width: 350px;
+	height: 250px;
+	background-color: var(--branco);
+ 	margin-left: auto;
+  margin-right: auto;
+ 	margin-top: 100px;
+	text-align: center;
+	padding: 10px;
 }
