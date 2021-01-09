@@ -18,6 +18,7 @@ Repositório da aula de JS ensinada na plataforma Digital Innovation One, cujo d
 [![HTML Badge](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff&link=https://www.w3schools.com/html/)](https://www.w3schools.com/html/) 
 [![CSS Badge](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3&logoColor=ffffff&link=https://developer.mozilla.org/pt-BR/docs/Web/CSS)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
 [![JS Badge](https://img.shields.io/badge/-JavaScript-%23F7DF1E?style=flat-square&logo=javascript&logoColor=black&link=https://www.w3schools.com/js/default.asp)](https://www.w3schools.com/js/default.asp)
+[![jQuery Badge](https://img.shields.io/badge/-jQuery-%230769AD?style=flat-square&logo=jquery&logoColor=ffffff&link=https://www.w3schools.com/jquery/)](https://www.w3schools.com/jquery/)
 
 ### Recursos CSS:
 
