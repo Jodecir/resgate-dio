@@ -97,9 +97,9 @@ function start() {
   var bgmMusic=document.getElementById("bgmMusic");
   var sfxDisparo=document.getElementById("sfxDisparo");
   var sfxExplosao=document.getElementById("sfxExplosao");
-  var bgmGameover=document.getElementById("bgmGameover");
   var sfxPerdido=document.getElementById("sfxPerdido");
   var sfxResgate=document.getElementById("sfxResgate");
+  var bgmGameover=document.getElementById("bgmGameover");
 
   bgmMusic.addEventListener("ended", function(){ bgmMusic.currentTime = 0; bgmMusic.play(); }, false);
   bgmMusic.play();
