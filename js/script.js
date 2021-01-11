@@ -94,15 +94,15 @@ function start() {
     }
   }
 
-  var bgMusic=document.getElementById("bgMusic");
-  var somDisparo=document.getElementById("somDisparo");
-  var somExplosao=document.getElementById("somExplosao");
-  var somGameover=document.getElementById("somGameover");
-  var somPerdido=document.getElementById("somPerdido");
-  var somResgate=document.getElementById("somResgate");
+  var bgmMusic=document.getElementById("bgmMusic");
+  var sfxDisparo=document.getElementById("sfxDisparo");
+  var sfxExplosao=document.getElementById("sfxExplosao");
+  var bgmGameover=document.getElementById("bgmGameover");
+  var sfxPerdido=document.getElementById("sfxPerdido");
+  var sfxResgate=document.getElementById("sfxResgate");
 
-  bgMusic.addEventListener("ended", function(){ bgMusic.currentTime = 0; bgMusic.play(); }, false);
-  bgMusic.play();
+  bgmMusic.addEventListener("ended", function(){ bgmMusic.currentTime = 0; bgmMusic.play(); }, false);
+  bgmMusic.play();
 
   function bgMovement() {
     esquerda = parseInt($("#background-game").css("background-position"));
@@ -134,7 +134,7 @@ function start() {
         shootUnlocked=true;
       }
       
-      somDisparo.play();
+      sfxDisparo.play();
     }
   }
 
@@ -204,7 +204,7 @@ function start() {
       $("#amigo").remove();
       
       peopleRescued++;
-      somResgate.play();
+      sfxResgate.play();
     }
 
     if (colisao6.length>0) {
@@ -234,7 +234,7 @@ function start() {
       tempoExplosao=null;
     }
 
-    somExplosao.play();
+    sfxExplosao.play();
   }
 
   function explosao2(enemy2X,enemy2Y) {
@@ -253,7 +253,7 @@ function start() {
       tempoExplosao=null;
     }
     
-    somExplosao.play();
+    sfxExplosao.play();
   }
 
   function explosao3(amigoX,amigoY) {
@@ -267,7 +267,7 @@ function start() {
     tempoExplosao3=null;
     }
     
-    somPerdido.play();
+    sfxPerdido.play();
   }
 
   function reposicionaAmigo() {
@@ -333,8 +333,8 @@ function start() {
   
   function gameOver() {
     armorZero=true;
-    bgMusic.pause();
-    somGameover.play();
+    bgmMusic.pause();
+    bgmGameover.play();
     
     window.clearInterval(game.timer);
     game.timer=null;
@@ -351,7 +351,7 @@ function start() {
 }
 
 function reiniciagame() {
-	somGameover.pause();
+	bgmGameover.pause();
 	$("#fim").remove();
   start();
 }
