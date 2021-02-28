@@ -10,14 +10,14 @@ function start() {
   
   var game = {}
   var player = {}
-  var armor=3;
-  var armorZero=false;
-  var speed=5;
+  var armor = 3;
+  var armorZero = false;
+  var speed = 5;
   var yPosition = parseInt(Math.random() * 334);
-  var shootUnlocked=true;
-  var points=0;
-  var peopleRescued=0;
-  var peopleDead=0;
+  var shootUnlocked = true;
+  var points = 0;
+  var peopleRescued = 0;
+  var peopleDead = 0;
 
   game.timer = setInterval(loop,15);
 
