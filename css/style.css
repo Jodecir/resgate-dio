@@ -140,11 +140,18 @@ h3 {
      to { background-position: -512px; }
 }
 
-#disparo {
+#playerShoot {
 	width: 50px;
 	height: 8px;
 	position: absolute;
-	background-image: url(../img/disparo.png);
+	background-image: url(../img/playerShoot.png);
+}
+
+#playerSpecial {
+	width: 500px;
+	height: 80px;
+	position: absolute;
+	background-image: url(../img/playerShoot.png);
 }
 
 #explosao1 {
