@@ -2,6 +2,7 @@ function start() {
 	$("#start-game").hide();
 	
   $("#background-game").append("<div id='armor'></div>");
+  $("#background-game").append("<div id='energy'></div>");
   $("#background-game").append("<div class='anima1' id='jogador'></div>");
 	$("#background-game").append("<div class='anima3' id='amigo'></div>");
 	$("#background-game").append("<div class='anima2' id='enemy1'></div>");
@@ -11,6 +12,7 @@ function start() {
   var game = {}
   var player = {}
   var armor = 3;
+  var energy = 3;
   var armorZero = false;
   var speed = 5;
   var yPosition = parseInt(Math.random() * 334);
@@ -23,6 +25,7 @@ function start() {
 
   function loop() {
     armorRefresh();
+    energyRefresh();
     bgMovement();
     playerMovement();
     friendMovement();
@@ -56,7 +59,7 @@ function start() {
       var topo = parseInt($("#jogador").css("top"));
       $("#jogador").css("top",topo-10);	
       
-      if (topo<=0) {
+      if (topo <= 0) {
         $("#jogador").css("top",topo+10);
       }
     }
@@ -66,7 +69,7 @@ function start() {
       $("#jogador").css("top",topo+10);	
     }
     
-    if (topo>=400) {
+    if (topo >= 400) {
       $("#jogador").css("top",topo-10);
     }
     
@@ -76,21 +79,39 @@ function start() {
   }
 
   function armorRefresh() {
-    if (armor==3) {  
+    if (armor == 3) {  
       $("#armor").css("background-image", "url(img/armor3.png)");
     }
 
-    if (armor==2) {
+    if (armor == 2) {
       $("#armor").css("background-image", "url(img/armor2.png)");
     }
 
-    if (armor==1) {
+    if (armor == 1) {
       $("#armor").css("background-image", "url(img/armor1.png)");
     }
 
-    if (armor==0) {
+    if (armor == 0) {
       $("#armor").css("background-image", "url(img/hud.png)"); 
       gameOver();
+    }
+  }
+
+  function energyRefresh() {
+    if (energy >= 3) {
+      $("#energy").css("background-image", "url(img/energy3.png)");
+    }
+
+    if (energy == 2) {
+      $("#energy").css("background-image", "url(img/energy2.png)");
+    }
+
+    if (energy == 1) {
+      $("#energy").css("background-image", "url(img/energy1.png)");
+    }
+
+    if (energy == 0) {
+      $("#energy").css("background-image", "url(img/hud.png)");
     }
   }
 
@@ -101,7 +122,10 @@ function start() {
   var sfxResgate=document.getElementById("sfxResgate");
   var bgmGameover=document.getElementById("bgmGameover");
 
-  bgmMusic.addEventListener("ended", function(){ bgmMusic.currentTime = 0; bgmMusic.play(); }, false);
+  bgmMusic.addEventListener("ended", function(){ 
+    bgmMusic.currentTime = 0; 
+    bgmMusic.play(); 
+  }, false);
   bgmMusic.play();
 
   function bgMovement() {
@@ -110,8 +134,9 @@ function start() {
   }
 
   function playerShoot() {
-    if (shootUnlocked==true) {	
+    if (shootUnlocked == true && energy >= 1) {	
       shootUnlocked=false;
+      energy--;
       
       topo = parseInt($("#jogador").css("top"))
       xPosition= parseInt($("#jogador").css("left"))
@@ -121,7 +146,7 @@ function start() {
       $("#playerShoot").css("top",topoTiro);
       $("#playerShoot").css("left",tiroX);
     
-      var tempoDisparo=window.setInterval(executaDisparo, 30);
+      var tempoDisparo=window.setInterval(executaDisparo, 15);
     } 
     function executaDisparo() {
       xPosition = parseInt($("#playerShoot").css("left"));
@@ -204,6 +229,9 @@ function start() {
       $("#amigo").remove();
       
       peopleRescued++;
+      energy++;
+      energy++;
+      energy++;
       sfxResgate.play();
     }
 
@@ -277,7 +305,7 @@ function start() {
     window.clearInterval(tempoAmigo);
     tempoAmigo=null;
       
-      if (armorZero==false) {
+      if (armorZero == false) {
       $("#background-game").append("<div id='amigo' class='anima3'></div>");		
       }
     }
@@ -290,7 +318,7 @@ function start() {
         window.clearInterval(tempoColisao4);
         tempoColisao4=null;
         
-        if (armorZero==false) {
+        if (armorZero == false) {
         
         $("#background-game").append("<div id=enemy2></div");	
       }
@@ -311,7 +339,7 @@ function start() {
     $("#enemy1").css("left",xPosition-speed);
     $("#enemy1").css("top",yPosition);
       
-    if (xPosition<=0) {
+    if (xPosition <= 0) {
     yPosition = parseInt(Math.random() * 335);
     $("#enemy1").css("left",700);
     $("#enemy1").css("top",yPosition);			
@@ -322,7 +350,7 @@ function start() {
     xPosition = parseInt($("#enemy2").css("left"));
     $("#enemy2").css("left",xPosition-3);
       
-    if (xPosition<=0) {
+    if (xPosition <= 0) {
       $("#enemy2").css("left",775);
     }
   }

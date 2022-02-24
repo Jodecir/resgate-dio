@@ -58,6 +58,14 @@ h3 {
 	top: 25px;	
 }
 
+#energy {
+	width: 140px;
+	height: 38px;
+	position: absolute;
+	left: 790px;
+	top: 65px;	
+}
+
 #jogador {
   background-image: url(../img/apache.png);
 	width: 256px;
