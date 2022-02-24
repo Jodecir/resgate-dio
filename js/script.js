@@ -196,8 +196,7 @@ function start() {
     }
 
     if (colisao3.length>0) {
-      
-      speed=speed+0.1;
+      speed=speed + 0.1;
       enemy1X = parseInt($("#enemy1").css("left"));
       enemy1Y = parseInt($("#enemy1").css("top"));
         
@@ -208,7 +207,7 @@ function start() {
       $("#enemy1").css("left",694);
       $("#enemy1").css("top",yPosition);
       
-      points=points+100;
+      points = points + 200;
     }
 
     if (colisao4.length>0) {
@@ -221,7 +220,7 @@ function start() {
       
       reposicionaInimigo2();
       
-      points=points+50;
+      points = points + 100;
     }
 
     if (colisao5.length>0) {		
@@ -229,6 +228,7 @@ function start() {
       $("#amigo").remove();
       
       peopleRescued++;
+      points += 100;
       energy++;
       energy++;
       energy++;
@@ -360,7 +360,7 @@ function start() {
   }
   
   function gameOver() {
-    armorZero=true;
+    armorZero = true;
     bgmMusic.pause();
     bgmGameover.play();
     
