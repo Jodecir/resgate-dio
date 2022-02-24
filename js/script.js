@@ -299,7 +299,7 @@ function start() {
   }
 
   function reposicionaAmigo() {
-    var tempoAmigo=window.setInterval(reposiciona6, 6000);
+    var tempoAmigo = window.setInterval(reposiciona6, 3000);
     
     function reposiciona6() {
     window.clearInterval(tempoAmigo);
