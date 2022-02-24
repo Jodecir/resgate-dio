@@ -224,7 +224,7 @@ function start() {
     }
 
     if (colisao5.length>0) {		
-      reposicionaAmigo();
+      friendRespawn();
       $("#amigo").remove();
       
       peopleRescued++;
@@ -241,8 +241,8 @@ function start() {
       explosao3(amigoX,amigoY);
       $("#amigo").remove();
           
-      reposicionaAmigo();
       peopleDead++;
+      friendRespawn();
     }
   }
 
@@ -298,7 +298,7 @@ function start() {
     sfxPerdido.play();
   }
 
-  function reposicionaAmigo() {
+  function friendRespawn() {
     var tempoAmigo = window.setInterval(reposiciona6, 3000);
     
     function reposiciona6() {
